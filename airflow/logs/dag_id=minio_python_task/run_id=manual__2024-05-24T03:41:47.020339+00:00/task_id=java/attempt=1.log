@@ -1,0 +1,27 @@
+[2024-05-24T03:41:49.044+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_python_task.java manual__2024-05-24T03:41:47.020339+00:00 [queued]>
+[2024-05-24T03:41:49.124+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_python_task.java manual__2024-05-24T03:41:47.020339+00:00 [queued]>
+[2024-05-24T03:41:49.128+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-05-24T03:41:49.213+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): java> on 2024-05-24 03:41:47.020339+00:00
+[2024-05-24T03:41:49.226+0000] {standard_task_runner.py:57} INFO - Started process 293 to run task
+[2024-05-24T03:41:49.232+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'minio_python_task', 'java', 'manual__2024-05-24T03:41:47.020339+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/dag_teste/teste_***.py', '--cfg-path', '/tmp/tmpdush7a1a']
+[2024-05-24T03:41:49.235+0000] {standard_task_runner.py:85} INFO - Job 53: Subtask java
+[2024-05-24T03:41:49.573+0000] {task_command.py:415} INFO - Running <TaskInstance: minio_python_task.java manual__2024-05-24T03:41:47.020339+00:00 [running]> on host 996d4eb998ba
+[2024-05-24T03:41:49.773+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='minio_python_task' AIRFLOW_CTX_TASK_ID='java' AIRFLOW_CTX_EXECUTION_DATE='2024-05-24T03:41:47.020339+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-24T03:41:47.020339+00:00'
+[2024-05-24T03:41:49.787+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_teste/teste_airflow.py", line 10, in execute_java_file
+    exec(open("/opt/airflow/dags/java/java/install-java.sh").read())
+  File "<string>", line 40
+    [yY][eE][sS] | [yY])
+                       ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '{' on line 36
+[2024-05-24T03:41:49.829+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=minio_python_task, task_id=java, execution_date=20240524T034147, start_date=20240524T034149, end_date=20240524T034149
+[2024-05-24T03:41:49.922+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 53 for task java (closing parenthesis ')' does not match opening parenthesis '{' on line 36 (<string>, line 40); 293)
+[2024-05-24T03:41:49.972+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-05-24T03:41:50.019+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

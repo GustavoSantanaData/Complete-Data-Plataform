@@ -1,0 +1,29 @@
+[2024-06-06T12:57:14.901+0000] {processor.py:157} INFO - Started process (PID=37) to work on /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:14.902+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/zeus/JEDI_zeus.py for tasks to queue
+[2024-06-06T12:57:14.904+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:14.904+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:14.982+0000] {processor.py:839} INFO - DAG(s) dict_keys(['JEDI_zeus']) retrieved from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:15.279+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:15.279+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:JEDI_zeus' as access control is unset.
+[2024-06-06T12:57:15.279+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:15.279+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:57:15.315+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:15.314+0000] {dag.py:3696} INFO - Setting next_dagrun for JEDI_zeus to 2024-06-06T09:00:00+00:00, run_after=2024-06-06T12:00:00+00:00
+[2024-06-06T12:57:15.361+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/zeus/JEDI_zeus.py took 0.463 seconds
+[2024-06-06T12:57:46.287+0000] {processor.py:157} INFO - Started process (PID=57) to work on /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:46.291+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/zeus/JEDI_zeus.py for tasks to queue
+[2024-06-06T12:57:46.295+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:46.295+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:46.316+0000] {processor.py:839} INFO - DAG(s) dict_keys(['JEDI_zeus']) retrieved from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:57:46.362+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:46.361+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:57:46.385+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:46.385+0000] {dag.py:3696} INFO - Setting next_dagrun for JEDI_zeus to 2024-06-06T09:00:00+00:00, run_after=2024-06-06T12:00:00+00:00
+[2024-06-06T12:57:46.401+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/zeus/JEDI_zeus.py took 0.119 seconds
+[2024-06-06T12:58:16.655+0000] {processor.py:157} INFO - Started process (PID=83) to work on /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:16.659+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/zeus/JEDI_zeus.py for tasks to queue
+[2024-06-06T12:58:16.660+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:16.660+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:16.683+0000] {processor.py:839} INFO - DAG(s) dict_keys(['JEDI_zeus']) retrieved from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:16.725+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:16.725+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:58:16.748+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:16.748+0000] {dag.py:3696} INFO - Setting next_dagrun for JEDI_zeus to 2024-06-06T09:00:00+00:00, run_after=2024-06-06T12:00:00+00:00
+[2024-06-06T12:58:16.764+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/zeus/JEDI_zeus.py took 0.114 seconds
+[2024-06-06T12:58:46.985+0000] {processor.py:157} INFO - Started process (PID=101) to work on /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:46.989+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/zeus/JEDI_zeus.py for tasks to queue
+[2024-06-06T12:58:46.991+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:46.990+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:47.013+0000] {processor.py:839} INFO - DAG(s) dict_keys(['JEDI_zeus']) retrieved from /opt/airflow/dags/zeus/JEDI_zeus.py
+[2024-06-06T12:58:47.044+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:47.044+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:58:47.073+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:47.072+0000] {dag.py:3696} INFO - Setting next_dagrun for JEDI_zeus to 2024-06-06T09:00:00+00:00, run_after=2024-06-06T12:00:00+00:00
+[2024-06-06T12:58:47.089+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/zeus/JEDI_zeus.py took 0.108 seconds

@@ -1,0 +1,15 @@
+[2024-05-24T03:04:29.900+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_python_task.execute_teste_py manual__2024-05-24T03:04:28.624431+00:00 [queued]>
+[2024-05-24T03:04:29.912+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_python_task.execute_teste_py manual__2024-05-24T03:04:28.624431+00:00 [queued]>
+[2024-05-24T03:04:29.913+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-05-24T03:04:29.925+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): execute_teste_py> on 2024-05-24 03:04:28.624431+00:00
+[2024-05-24T03:04:29.930+0000] {standard_task_runner.py:57} INFO - Started process 762 to run task
+[2024-05-24T03:04:29.934+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'minio_python_task', 'execute_teste_py', 'manual__2024-05-24T03:04:28.624431+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/dag_teste/teste_***.py', '--cfg-path', '/tmp/tmpxqtqatsw']
+[2024-05-24T03:04:29.936+0000] {standard_task_runner.py:85} INFO - Job 30: Subtask execute_teste_py
+[2024-05-24T03:04:29.992+0000] {task_command.py:415} INFO - Running <TaskInstance: minio_python_task.execute_teste_py manual__2024-05-24T03:04:28.624431+00:00 [running]> on host 7b5dece41aaf
+[2024-05-24T03:04:30.081+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='minio_python_task' AIRFLOW_CTX_TASK_ID='execute_teste_py' AIRFLOW_CTX_EXECUTION_DATE='2024-05-24T03:04:28.624431+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-24T03:04:28.624431+00:00'
+[2024-05-24T03:04:30.083+0000] {teste_airflow.py:7} INFO - Iniciando a execução do arquivo Python
+[2024-05-24T03:04:30.087+0000] {teste_airflow.py:10} INFO - Execução do arquivo Python foi bem-sucedida
+[2024-05-24T03:04:30.088+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-05-24T03:04:30.109+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=minio_python_task, task_id=execute_teste_py, execution_date=20240524T030428, start_date=20240524T030429, end_date=20240524T030430
+[2024-05-24T03:04:30.153+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-05-24T03:04:30.176+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

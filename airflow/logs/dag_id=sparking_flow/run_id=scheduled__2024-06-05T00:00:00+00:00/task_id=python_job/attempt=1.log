@@ -1,0 +1,24 @@
+[2024-06-06T12:57:22.238+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sparking_flow.python_job scheduled__2024-06-05T00:00:00+00:00 [queued]>
+[2024-06-06T12:57:22.246+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sparking_flow.python_job scheduled__2024-06-05T00:00:00+00:00 [queued]>
+[2024-06-06T12:57:22.246+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-06-06T12:57:22.256+0000] {taskinstance.py:1380} INFO - Executing <Task(SparkSubmitOperator): python_job> on 2024-06-05 00:00:00+00:00
+[2024-06-06T12:57:22.261+0000] {standard_task_runner.py:57} INFO - Started process 59 to run task
+[2024-06-06T12:57:22.263+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sparking_flow', 'python_job', 'scheduled__2024-06-05T00:00:00+00:00', '--job-id', '439', '--raw', '--subdir', 'DAGS_FOLDER/dag_teste/teste_***.py', '--cfg-path', '/tmp/tmpjez4hn04']
+[2024-06-06T12:57:22.264+0000] {standard_task_runner.py:85} INFO - Job 439: Subtask python_job
+[2024-06-06T12:57:22.306+0000] {task_command.py:415} INFO - Running <TaskInstance: sparking_flow.python_job scheduled__2024-06-05T00:00:00+00:00 [running]> on host dfab0c62b584
+[2024-06-06T12:57:22.366+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Yusuf Ganiyu' AIRFLOW_CTX_DAG_ID='sparking_flow' AIRFLOW_CTX_TASK_ID='python_job' AIRFLOW_CTX_EXECUTION_DATE='2024-06-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-05T00:00:00+00:00'
+[2024-06-06T12:57:22.372+0000] {spark_submit.py:271} INFO - Could not load connection string spark-conn, defaulting to yarn
+[2024-06-06T12:57:22.373+0000] {spark_submit.py:401} INFO - Spark-Submit cmd: spark-submit --master yarn --name arrow-spark dags/wordcountjob.py
+[2024-06-06T12:57:22.475+0000] {spark_submit.py:571} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/spark-class: line 71: /usr/lib/jvm/java-11-openjdk-arm64/bin/java: No such file or directory
+[2024-06-06T12:57:22.476+0000] {spark_submit.py:571} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/spark-class: line 97: CMD: bad array subscript
+[2024-06-06T12:57:22.485+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 502, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --name arrow-spark dags/wordcountjob.py. Error code is: 1.
+[2024-06-06T12:57:22.488+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=sparking_flow, task_id=python_job, execution_date=20240605T000000, start_date=20240606T125722, end_date=20240606T125722
+[2024-06-06T12:57:22.499+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 439 for task python_job (Cannot execute: spark-submit --master yarn --name arrow-spark dags/wordcountjob.py. Error code is: 1.; 59)
+[2024-06-06T12:57:22.515+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-06-06T12:57:22.538+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,100 @@
+[2024-06-06T12:57:14.909+0000] {processor.py:157} INFO - Started process (PID=38) to work on /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:14.909+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hades/JEDI_hades.py for tasks to queue
+[2024-06-06T12:57:14.912+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:14.912+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:14.944+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:14.941+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/hades/JEDI_hades.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/hades/JEDI_hades.py", line 50, in <module>
+    start = DummyOperator(task_id='start_raw')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 812, in __init__
+    task_group.add(self)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/task_group.py", line 230, in add
+    raise DuplicateTaskIdFound(f"{node_type} id '{key}' has already been added to the DAG")
+airflow.exceptions.DuplicateTaskIdFound: Task id 'start_raw' has already been added to the DAG
+[2024-06-06T12:57:14.945+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:14.966+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/hades/JEDI_hades.py took 0.060 seconds
+[2024-06-06T12:57:45.261+0000] {processor.py:157} INFO - Started process (PID=56) to work on /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:45.265+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hades/JEDI_hades.py for tasks to queue
+[2024-06-06T12:57:45.268+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:45.268+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:45.285+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:45.282+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/hades/JEDI_hades.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/hades/JEDI_hades.py", line 50, in <module>
+    start = DummyOperator(task_id='start_raw')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 812, in __init__
+    task_group.add(self)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/task_group.py", line 230, in add
+    raise DuplicateTaskIdFound(f"{node_type} id '{key}' has already been added to the DAG")
+airflow.exceptions.DuplicateTaskIdFound: Task id 'start_raw' has already been added to the DAG
+[2024-06-06T12:57:45.287+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:57:45.316+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/hades/JEDI_hades.py took 0.060 seconds
+[2024-06-06T12:58:15.635+0000] {processor.py:157} INFO - Started process (PID=82) to work on /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:15.636+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hades/JEDI_hades.py for tasks to queue
+[2024-06-06T12:58:15.637+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:15.637+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:15.646+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:15.644+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/hades/JEDI_hades.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/hades/JEDI_hades.py", line 50, in <module>
+    start = DummyOperator(task_id='start_raw')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 812, in __init__
+    task_group.add(self)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/task_group.py", line 230, in add
+    raise DuplicateTaskIdFound(f"{node_type} id '{key}' has already been added to the DAG")
+airflow.exceptions.DuplicateTaskIdFound: Task id 'start_raw' has already been added to the DAG
+[2024-06-06T12:58:15.647+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:15.662+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/hades/JEDI_hades.py took 0.030 seconds
+[2024-06-06T12:58:45.966+0000] {processor.py:157} INFO - Started process (PID=100) to work on /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:45.967+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hades/JEDI_hades.py for tasks to queue
+[2024-06-06T12:58:45.969+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:45.968+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:45.989+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:45.985+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/hades/JEDI_hades.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/hades/JEDI_hades.py", line 50, in <module>
+    start = DummyOperator(task_id='start_raw')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 812, in __init__
+    task_group.add(self)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/task_group.py", line 230, in add
+    raise DuplicateTaskIdFound(f"{node_type} id '{key}' has already been added to the DAG")
+airflow.exceptions.DuplicateTaskIdFound: Task id 'start_raw' has already been added to the DAG
+[2024-06-06T12:58:45.991+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/hades/JEDI_hades.py
+[2024-06-06T12:58:46.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/hades/JEDI_hades.py took 0.059 seconds

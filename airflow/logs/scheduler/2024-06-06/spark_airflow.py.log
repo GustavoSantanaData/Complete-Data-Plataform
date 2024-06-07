@@ -1,0 +1,125 @@
+[2024-06-06T12:57:16.928+0000] {processor.py:157} INFO - Started process (PID=41) to work on /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:16.928+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2024-06-06T12:57:16.932+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:16.931+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:16.952+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sparking_flow']) retrieved from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:17.102+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:17.102+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:sparking_flow' as access control is unset.
+[2024-06-06T12:57:17.103+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:17.102+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:57:17.136+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:17.136+0000] {dag.py:3696} INFO - Setting next_dagrun for sparking_flow to 2024-06-05T00:00:00+00:00, run_after=2024-06-06T00:00:00+00:00
+[2024-06-06T12:57:17.551+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:17.549+0000] {dagbag.py:647} ERROR - Failed to write serialized DAG: /opt/airflow/dags/spark_airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 636, in _serialize_dag_capturing_errors
+    dag_was_updated = SerializedDagModel.write_dag(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 74, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/serialized_dag.py", line 147, in write_dag
+    if session.scalar(
+       ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1747, in scalar
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 724, in _connection_for_bind
+    self._assert_active()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 604, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "serialized_dag_pkey"
+DETAIL:  Key (dag_id)=(sparking_flow) already exists.
+
+[SQL: INSERT INTO serialized_dag (dag_id, fileloc, fileloc_hash, data, data_compressed, last_updated, dag_hash, processor_subdir) VALUES (%(dag_id)s, %(fileloc)s, %(fileloc_hash)s, %(data)s, %(data_compressed)s, %(last_updated)s, %(dag_hash)s, %(processor_subdir)s)]
+[parameters: {'dag_id': 'sparking_flow', 'fileloc': '/opt/airflow/dags/spark_airflow.py', 'fileloc_hash': 16732433089539742, 'data': '{"__version": 1, "dag": {"fileloc": "/opt/airflow/dags/spark_airflow.py", "dataset_triggers": [], "timezone": "UTC", "edge_info": {}, "_dag_id": "spa ... (3920 characters truncated) ... onOperator", "_task_module": "airflow.operators.python", "_is_empty": false, "op_args": [], "op_kwargs": {}}], "dag_dependencies": [], "params": {}}}', 'data_compressed': None, 'last_updated': datetime.datetime(2024, 6, 6, 12, 57, 16, 965915, tzinfo=Timezone('UTC')), 'dag_hash': '865fac5863164d0a071dc29020d948ee', 'processor_subdir': None}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+[2024-06-06T12:57:17.551+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:17.551+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:57:17.552+0000] {processor.py:182} ERROR - Got an exception! Propagating...
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/dag_processing/processor.py", line 178, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/dag_processing/processor.py", line 159, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 77, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/dag_processing/processor.py", line 857, in process_file
+    serialize_errors = DagFileProcessor.save_dag_to_db(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/api_internal/internal_api_call.py", line 114, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 77, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/dag_processing/processor.py", line 893, in save_dag_to_db
+    import_errors = DagBag._sync_to_db(dags=dags, processor_subdir=dag_directory, session=session)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 74, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 657, in _sync_to_db
+    for attempt in run_with_db_retries(logger=log):
+  File "/home/airflow/.local/lib/python3.11/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/tenacity/__init__.py", line 314, in iter
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 671, in _sync_to_db
+    DAG.bulk_write_to_db(dags.values(), processor_subdir=processor_subdir, session=session)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 74, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dag.py", line 2927, in bulk_write_to_db
+    orm_dags: list[DagModel] = session.scalars(query).unique().all()
+                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1778, in scalars
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 724, in _connection_for_bind
+    self._assert_active()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 604, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "serialized_dag_pkey"
+DETAIL:  Key (dag_id)=(sparking_flow) already exists.
+
+[SQL: INSERT INTO serialized_dag (dag_id, fileloc, fileloc_hash, data, data_compressed, last_updated, dag_hash, processor_subdir) VALUES (%(dag_id)s, %(fileloc)s, %(fileloc_hash)s, %(data)s, %(data_compressed)s, %(last_updated)s, %(dag_hash)s, %(processor_subdir)s)]
+[parameters: {'dag_id': 'sparking_flow', 'fileloc': '/opt/airflow/dags/spark_airflow.py', 'fileloc_hash': 16732433089539742, 'data': '{"__version": 1, "dag": {"fileloc": "/opt/airflow/dags/spark_airflow.py", "dataset_triggers": [], "timezone": "UTC", "edge_info": {}, "_dag_id": "spa ... (3920 characters truncated) ... onOperator", "_task_module": "airflow.operators.python", "_is_empty": false, "op_args": [], "op_kwargs": {}}], "dag_dependencies": [], "params": {}}}', 'data_compressed': None, 'last_updated': datetime.datetime(2024, 6, 6, 12, 57, 16, 965915, tzinfo=Timezone('UTC')), 'dag_hash': '865fac5863164d0a071dc29020d948ee', 'processor_subdir': None}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+[2024-06-06T12:57:48.493+0000] {processor.py:157} INFO - Started process (PID=60) to work on /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:48.496+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2024-06-06T12:57:48.500+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:48.500+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:48.521+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sparking_flow']) retrieved from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:57:48.633+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:48.633+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:sparking_flow' as access control is unset.
+[2024-06-06T12:57:48.634+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:48.633+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:57:48.652+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:57:48.652+0000] {dag.py:3696} INFO - Setting next_dagrun for sparking_flow to 2024-06-06T00:00:00+00:00, run_after=2024-06-07T00:00:00+00:00
+[2024-06-06T12:57:48.670+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.182 seconds
+[2024-06-06T12:58:18.815+0000] {processor.py:157} INFO - Started process (PID=86) to work on /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:18.819+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2024-06-06T12:58:18.820+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:18.820+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:18.844+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sparking_flow']) retrieved from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:18.888+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:18.888+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:58:18.924+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:18.924+0000] {dag.py:3696} INFO - Setting next_dagrun for sparking_flow to 2024-06-06T00:00:00+00:00, run_after=2024-06-07T00:00:00+00:00
+[2024-06-06T12:58:18.947+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.136 seconds
+[2024-06-06T12:58:49.182+0000] {processor.py:157} INFO - Started process (PID=104) to work on /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:49.184+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2024-06-06T12:58:49.185+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:49.185+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:49.209+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sparking_flow']) retrieved from /opt/airflow/dags/spark_airflow.py
+[2024-06-06T12:58:49.227+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:49.227+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-06-06T12:58:49.265+0000] {logging_mixin.py:151} INFO - [2024-06-06T12:58:49.265+0000] {dag.py:3696} INFO - Setting next_dagrun for sparking_flow to 2024-06-06T00:00:00+00:00, run_after=2024-06-07T00:00:00+00:00
+[2024-06-06T12:58:49.293+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.117 seconds
