@@ -1,0 +1,53 @@
+version: "3"
+
+
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"
+    volumes:
+      - /data:/data
+    command: server /data
+    networks:
+      data_plataform_network:
+        ipv4_address: 172.26.0.3  # Atribui um endereço IP estático ao serviço MinIO
+
+  init_minio:
+    build: ./minio
+    depends_on:
+      - minio  # Garante que o MinIO esteja ativo antes de rodar o container de inicialização
+    networks:
+      data_plataform_network:
+
+  kafka-man:
+    build: ./kafka-man
+    depends_on:
+      - init_minio
+    networks:
+      data_plataform_network:
+
+  jedi:
+    depends_on:
+      - init_minio
+    build: ./jedi
+    networks:
+      data_plataform_network:
+
+  sync_minio_airflow:
+    depends_on:
+      - minio
+    build: ./sync_minio_airflow
+    networks:
+      data_plataform_network:
+    volumes:
+      # Mapeie a pasta local para o caminho correspondente dentro do container
+      - "/home/gustavo/Desktop/Luizalabs/curso/portifolio/data_plataform/airflow/dags:/app/dags"
+
+networks:
+  data_plataform_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.26.0.0/24  # Define um bloco IP (subnet) para a rede Docker

@@ -1,0 +1,104 @@
+hades:
+  owner: 'gustavo santana'
+  scheduler_time: '0 0/1 * * *'
+  connection: 'hades'
+  tables:
+    hades:
+      topic: 'hades'
+      kafka_server: 'pkc-4r087.us-west2.gcp.confluent.cloud:9092'
+      delta_format: True
+      key: ["id"]
+      number_partitions: "600"
+      number_of_instances : 3
+      number_max_of_instances: 6
+      driver_size: 'LARGE'
+      executor_size: 'ULTRA_LARGE'
+      schema: 'StructField("id", IntegerType(), True),
+        StructField("phone_number", StringType(), True),
+        StructField("rating", IntegerType(), True),
+        StructField("product", StringType(), True),
+        StructField("protocol", StringType(), True),
+        StructField("status", StringType(), True),
+        StructField("updated_at", TimestampType(), True)'
+    jjj:
+      topic: 'jjj'
+      kafka_server: 'pkc-4r087.us-west2.gcp.confluent.cloud:9092'
+      delta_format: True
+      key: ["id"]
+      number_partitions: "600"
+      number_of_instances : 3
+      number_max_of_instances: 6
+      driver_size: 'LARGE'
+      executor_size: 'ULTRA_LARGE'
+      schema: 'StructField("id", IntegerType(), True),
+        StructField("phone_number", StringType(), True),
+        StructField("rating", IntegerType(), True),
+        StructField("product", StringType(), True),
+        StructField("protocol", StringType(), True),
+        StructField("status", StringType(), True),
+        StructField("updated_at", TimestampType(), True)'
+    ddd:
+      delta_format: True
+      key: ["id"]
+      number_partitions: "600"
+      number_of_instances : 3
+      number_max_of_instances: 6
+      checkpoint_column: 'updated_at'
+      driver_size: 'LARGE'
+      executor_size: 'ULTRA_LARGE'
+      schema: 'StructField("id", IntegerType(), True),
+        StructField("phone_number", StringType(), True),
+        StructField("rating", IntegerType(), True),
+        StructField("product", StringType(), True),
+        StructField("protocol", StringType(), True),
+        StructField("status", StringType(), True),
+        StructField("updated_at", TimestampType(), True)'
+
+zeus:
+  owner: 'gustavo soares'
+  scheduler_time: '0 0/3 * * *'
+  connection: 'zeus'
+  tables:
+    zeus:
+      topic: 'TK_TOPIC'
+      kafka_server: 'pkc-4r087.us-west2.gcp.confluent.cloud:9092'
+      delta_format: True
+      key: ["id"]
+      number_partitions: "600"
+      number_of_instances : 3
+      number_max_of_instances: 6
+      driver_size: 'LARGE'
+      executor_size: 'ULTRA_LARGE'
+      schema: 'StructField("id", IntegerType(), True),
+        StructField("phone_number", StringType(), True),
+        StructField("rating", IntegerType(), True),
+        StructField("product", StringType(), True),
+        StructField("protocol", StringType(), True),
+        StructField("status", StringType(), True),
+        StructField("updated_at", TimestampType(), True)'
+
+aphrodite:
+  owner: 'gustavo soares'
+  scheduler_time: '0 0/3 * * *'
+  connection: 'aphrodite'
+  tables:
+    aphrodite:
+      delta_format: True
+      key: ["id"]
+      number_partitions: "600"
+      number_of_instances : 3
+      number_max_of_instances: 6
+      driver_size: 'LARGE'
+      checkpoint_column: 'updated_at'
+      executor_size: 'ULTRA_LARGE'
+      ignore_columns: ['identity', 'phone', 'credit_card']
+      schema: 'StructField("id", LongType(), nullable=False),
+        StructField("name", StringType(), nullable=True),
+        StructField("gender", StringType(), nullable=True),
+        StructField("identity", StringType(), nullable=True),
+        StructField("phone", StringType(), nullable=True),
+        StructField("credit_card", StringType(), nullable=True),
+        StructField("product", StringType(), nullable=True),
+        StructField("category", StringType(), nullable=True),
+        StructField("comment", StringType(), nullable=True),
+        StructField("updated_at", TimestampType(), nullable=True)'

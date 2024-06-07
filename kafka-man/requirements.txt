@@ -1,0 +1,2 @@
+confluent-kafka==2.3.0
+mysql-connector-python==8.3.0

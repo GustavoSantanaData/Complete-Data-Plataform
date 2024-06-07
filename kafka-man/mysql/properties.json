@@ -1,0 +1,24 @@
+[
+    {
+        "name": "zeus",
+        "host": "srv728.hstgr.io",
+        "port": "3306",
+        "user": "u135076585_zeus",
+        "password": "AX!Yxcam4B",
+        "database": "u135076585_zeus",
+        "topic": "TK_TOPIC",
+        "columns": "id, product, category, price",
+        "last_processed_id": 0
+    },
+    {
+        "name": "hades",
+        "host": "185.213.81.205",
+        "port": "3306",
+        "user": "u135076585_hades",
+        "password": "1Da^X^OZ#",
+        "database": "u135076585_hades",
+        "topic": "hades",
+        "columns": "id, phone_number, rating, product, protocol, status, updated_at",
+        "last_processed_id": 0
+    }
+]

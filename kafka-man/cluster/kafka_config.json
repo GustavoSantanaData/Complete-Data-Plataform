@@ -1,0 +1,8 @@
+{
+    "bootstrap.servers": "pkc-12576z.us-west2.gcp.confluent.cloud:9092",
+    "security.protocol": "SASL_SSL",
+    "sasl.mechanisms": "PLAIN",
+    "sasl.username": "OIG4EDDJW3O3L7C7",
+    "sasl.password": "sUGj3gMp1lA521M0Qym8aIUusbJSpAN0DWQ2j+scAwmoe5vFMnLz5+TcEiCczc/8"
+}
+
