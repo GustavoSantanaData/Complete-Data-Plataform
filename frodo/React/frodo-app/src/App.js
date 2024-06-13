@@ -53,28 +53,28 @@ const App = () => {
       <form onSubmit={handleFormSubmit}>
         <div className='mb-3 mt-3'>
           <label htmlFor='nome' className='form-label'>
-            Nome da conexão
+            Connection Name
           </label>
           <input type='text' className='form-control' id='nome' name='nome' onChange={handleInputChange} value={formData.nome}/>
         </div>
 
         <div className='mb-3 mt-3'>
           <label htmlFor='string' className='form-label'>
-            String de conexão
+            String Connection
           </label>
           <input type='text' className='form-control' id='string' name='string' onChange={handleInputChange} value={formData.string}/>
         </div>
 
         <div className='mb-3 mt-3'>
           <label htmlFor='usuario' className='form-label'>
-            Usuário do banco
+            User Database
           </label>
           <input type='text' className='form-control' id='usuario' name='usuario' onChange={handleInputChange} value={formData.usuario}/>
         </div>
 
         <div className='mb-3 mt-3'>
           <label htmlFor='senha' className='form-label'>
-            Senha
+            Password
           </label>
           <input type='text' className='form-control' id='senha' name='senha' onChange={handleInputChange} value={formData.senha}/>
         </div>
@@ -88,10 +88,10 @@ const App = () => {
       <table className='table table-striped table-bordered table-hover'>
         <thead>
           <tr>
-            <th>Nome da conexão</th>
-            <th>String de conexão</th>
-            <th>Usuário do banco</th>
-            <th>Senha</th>
+            <th>Connection Name</th>
+            <th>String connection</th>
+            <th>User Database</th>
+            <th>Password</th>
             
           </tr>
         </thead>
